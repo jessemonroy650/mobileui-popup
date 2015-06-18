@@ -14,11 +14,6 @@
         </author>
         <gap:platform name="android" />
         <gap:platform name="ios" />
-        <!-- Thanks to Ben & Rahul on for the landscape fix -->
-        <gap:config-file platform="android" parent="/manifest/application" >
-            <application android:debuggable="false" />
-            <activity android:screenOrientation="landscape" android:configChanges="orientation" />
-        </gap:config-file>
         <preference name="permissions" value="none"/>
         <!-- device required so we can detect if we are using iOS -->
         <gap:plugin name="org.apache.cordova.device" />
