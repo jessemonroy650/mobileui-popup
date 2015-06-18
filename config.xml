@@ -4,9 +4,6 @@
         id          = "com.bsdmasterindex.mobileui-popup-test"
         version     = "1.0"
         versionCode = "10" >
-        <gap:config-file platform="android" parent="/manifest/application" mode="merge">
-            <application android:debuggable="false" />
-        </gap:config-file>
 
         <!-- versionCode is optional and Android only -->
         <preference name="phonegap-version" value="3.5.0" />
@@ -24,5 +21,8 @@
 
         <!-- device required so we can detect if we are using iOS -->
         <gap:plugin name="org.apache.cordova.device" />
+
+        <gap:config-file platform="android" parent="/manifest/application" mode="merge">
+        </gap:config-file>
 
     </widget>
