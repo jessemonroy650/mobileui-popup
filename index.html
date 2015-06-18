@@ -6,11 +6,23 @@
     <link rel="stylesheet" href="buttons.css" />
     <style>
     body {margin:0px;font-size:large;}
-    .hidden {visibility:collapse;display:none;}
-    .expose {visibility:visible;display:block;} /* Here for completeness only. */
-    .copyright {padding:5px;align:left;font-style:italic;font-size:small;}
     #header {margin:0;padding:0;}
     #exitApp {margin:1em;float:right;}
+    .hidden {visibility:collapse;display:none;}
+    .expose {visibility:visible;display:block;} /* Here for completeness only. */
+    /* This was a bit tricky, but the article - found via stackexchange, helped.
+       To note, the CSS property 'display' cannot be animated, see Mozilla.
+       http://fvsch.com/code/transition-fade/
+    */
+    .popUp {
+        visibility:visible;display:block;
+        opacity: 1;
+        transition: opacity 1.5s linear;
+    }
+    .fadeOut {
+        opacity: 0;
+        transition: opacity 1.5s linear;
+    }
     #popup {
         height:200px;
         width:300px;
@@ -20,14 +32,9 @@
         left:50px;
         top:50px;
         padding:0.5em;
-        opacity: 1;
         border-radius: 0.5em;
-        -moz-transition: opacity 1.5s ease-out;
-        transition: opacity 1.5s ease-out;
     }
-    .fadeOut {
-        opacity: 0.1;
-    }
+    .copyright {padding:5px;align:left;font-style:italic;font-size:small;}
     </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript">
@@ -36,13 +43,44 @@
 	//
     function onButtonClick() {
         //alert("button clicked.");
+        console.log('button clicked');
+		console.log('popup');
+        /* This could be done with callbacks, but I did it this way so it was obvious. */
+        /* Set Popup message after a short delay */
 		setTimeout(function() {
-            document.getElementById('timeouttime').innerHTML = gTimeouttime/1000;
-			document.getElementById('popup').classList.add("expose");
+			document.getElementById('popup').classList.add("popUp");
 		}, gWaittime);
+        /* Set delay to fadeOut */
 		setTimeout(function() {
-			document.getElementById('popup').classList.remove("expose");
-		}, gTimeouttime);
+			console.log('fadeOut');
+			document.getElementById('popup').classList.add("fadeOut");
+		}, gWaittime + gTimeouttime);
+        /* Reset to Inital state. */
+		setTimeout(function() {
+			console.log('remove popUp');
+			document.getElementById('popup').classList.remove("popUp");
+			document.getElementById('popup').classList.remove("fadeOut");
+			document.getElementById('popup').classList.add("hidden");
+		}, gWaittime + gWaittime + gTimeouttime);
+    }
+    /* The same thing with nested callback(). For some this may be harder to grasp.
+    */
+    function onButtonClick2() {
+		setTimeout(function() {
+			document.getElementById('popup').classList.add("popUp");
+            /* Set delay to fadeOut */
+    		setTimeout(function() {
+	    		console.log('fadeOut');
+		    	document.getElementById('popup').classList.add("fadeOut");
+                /* Reset to Inital state. */
+        		setTimeout(function() {
+		        	console.log('remove popUp');
+        			document.getElementById('popup').classList.remove("popUp");
+		        	document.getElementById('popup').classList.remove("fadeOut");
+        			document.getElementById('popup').classList.add("hidden");
+		        }, gWaittime);
+    		}, gTimeouttime);
+		}, gWaittime);
     }
     //
     // Wait for PhoneGap to load
@@ -59,10 +97,12 @@
             /* http://coenraets.org/blog/2013/09/phonegap-and-cordova-with-ios-7/ */
             document.body.style.marginTop = "20px";
         }
+
     }
     //
     function onLoad() {
         //alert("body loaded.");
+        document.getElementById('timeouttime').innerHTML = gTimeouttime/1000;
     }
     </script>
 </head>
@@ -76,7 +116,10 @@
 <div id=content style="margin:1em;">content</div>
 <div id=popup class="hidden">This is a popup message goes away after <span id=timeouttime></span> seconds.</div>
 <pre id=info>pre</pre>
-<button onclick='onButtonClick()' class="button button-pill button-action button-large">button</button>
+<button onclick='onButtonClick()' class="button button-pill button-action button-large">onButtonClick</button>
+<p>
+<button onclick='onButtonClick2()' class="button button-pill button-action button-large">onButtonClick2</button>
+
 
 <div class="copyright" style="padding:5px;align:left;font-style:italic;font-size:small;">
     <span id=copyright>Created by Jesus Monroy, Jr. &copy; 2015</span>
