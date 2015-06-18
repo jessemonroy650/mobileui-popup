@@ -3,7 +3,8 @@ A simple popup done with &lt;div> in landscape mode
 
 
 ## CSS code for popup ##
-```	#popup {
+```
+	#popup {
 		height:200px;
 		width:300px;
 		padding:0.5em;
