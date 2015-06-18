@@ -23,6 +23,5 @@
 
         <gap:config-file platform="android" parent="/manifest/application" mode="merge">
             <application android:debuggable="false" />
-            <activity android:screenOrientation="landscape" android:configChanges="orientation" />
         </gap:config-file>
     </widget>
