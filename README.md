@@ -30,7 +30,7 @@ A simple popup done with &lt;div> in landscape mode
 * background-color:#eeeeee; - the color inside the box
 * opacity: 1; - the opposite of transparency (1 = not transparent)
 * border:1px black solid; - the box border
-* border-radius: 0.5em; - the round corner to the box
+* border-radius: 0.5em; - the round corner and border to the box
 
 **placement**
 
