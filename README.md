@@ -23,6 +23,7 @@ A simple popup done with &lt;div> in landscape mode
 ## line by line break down ##
 
 ** box **
+
 * height:200px;  - height of the box
 * width:300px;   - width of the box
 * padding:0.5em; - space between the edge of the box and the text
@@ -32,10 +33,12 @@ A simple popup done with &lt;div> in landscape mode
 * border-radius: 0.5em; - the round corner to the box
 
 ** placement **
+
 * position:absolute; - places the box relative the the view port (screen in this case)
 * left:50px; - 50 px from the left
 * top:50px; - 50 px from the top
 
 ** display trick (not working) **
+
 * -moz-transition: opacity 1.5s ease-in-out;
 * transition: opacity 1.5s ease-inout;
