@@ -13,11 +13,13 @@
         Jesse Monroy
         </author>
         <gap:platform name="android" />
-        <gap:platform name="ios" />
+        <!-- <gap:platform name="ios" /> -->
 
         <preference name="permissions" value="none"/>
 
         <gap:config-file platform="android" parent="/manifest/application" mode="merge">
+            <application android:debuggable="false" />
+            <activity android:screenOrientation="landscape" android:configChanges="orientation" />
         </gap:config-file>
 
         <!-- device required so we can detect if we are using iOS -->
