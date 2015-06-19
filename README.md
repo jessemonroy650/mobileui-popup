@@ -51,7 +51,7 @@ This has three steps that needed to be accomplished with javascript.
 * left:50px; - 50 px from the left
 * top:50px; - 50 px from the top
 
-**display trick**
+**display trick**<br>
 Working with help from: http://fvsch.com/code/transition-fade/
 
 * .hidden - set the block to initial be hidden
