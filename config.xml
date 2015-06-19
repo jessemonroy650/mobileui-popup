@@ -16,10 +16,10 @@
         <gap:platform name="android" />
         <preference name="android-minSdkVersion" value="10" />
         <preference name="android-targetSdkVersion" value="14" /> 
+        <preference name="orientation" value="landscape" />
+
         <!-- <gap:platform name="ios" /> -->
 
-        <preference name="permissions" value="none"/>
-        <preference name="orientation" value="landscape" />
 
         <!-- device required so we can detect if we are using iOS -->
         <gap:plugin name="org.apache.cordova.device" />
