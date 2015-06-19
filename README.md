@@ -1,6 +1,6 @@
 # mobileui-popup
 A simple popup done with &lt;div> in landscape mode.
-Also, checks the iOS landscape vs. keyboard, to make sure the both are in landscape. This is checked with and input field - just below the buttons.
+Also, checks the iOS landscape vs. keyboard, to make sure the both are in landscape. This is checked with an input field - just below the buttons (See: image at bottom).
 
 This has three steps that needed to be accomplished with some help from Javascript.
 
