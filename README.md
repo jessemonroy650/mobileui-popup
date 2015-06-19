@@ -40,7 +40,7 @@ This has three steps that needed to be accomplished with javascript.
 
 * height:200px;  - height of the box
 * width:300px;   - width of the box
-* background-color:#eeeeee; - the color inside the box
+* background-color:#eeeeee; - the background color inside the box
 * padding:0.5em; - space between the edge of the box and the text
 * border:1px black solid; - the box border
 * border-radius: 0.5em; - the round corner and border to the box
@@ -57,11 +57,15 @@ Working with help from: http://fvsch.com/code/transition-fade/
 * .hidden - set the block to initial be hidden
 ** visibility:hidden; - hidden makes so the block is not seen, in this case collapse will work too.
 ** display:none; - none makes it so NO space is taken in the "flow"
+
 * .popUp - set the block to be seen & set the initial state for animation
-** opacity: 1; - 1=fully visible, 0=hidden; 
-** transition: opacity 1.5s ease-in-out;
+** visibility:visible;display:block; -- toggles to make visible
+** below here NOT required, but here for completeness
+** opacity: 1; -- 1=fully visible, 0=hidden, anything between 0.0&lt;-&gt;1.0 is the tranparency percentage
+** transition: opacity 1.5s ease-in-out; -- 
+
 * .fadeOut - set the block to fadeOut (via CSS animation)
-** opacity: 0;
-** transition: opacity 1.5s ease-in-out;
+** opacity: 0; - make fully transparent
+** transition: opacity 1.5s ease-in-out; - animate the 'opacity' for '1.5' seconds and the 'ease-in-out' formula
 
 
