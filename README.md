@@ -20,20 +20,18 @@ This has three steps that needed to be accomplished with javascript.
         opacity: 0;
         transition: opacity 1.5s linear;
     }
-	#popup {
-		height:200px;
-		width:300px;
-		padding:0.5em;
-		background-color:#eeeeee;
-		border:1px black solid;
-		position:absolute;
-		left:50px;
-		top:50px;
-		opacity: 1;
-		border-radius: 0.5em;
-		-moz-transition: opacity 1.5s ease-in-out;
-		transition: opacity 1.5s ease-inout;
-	}
+    #popup {
+        height:200px;
+        width:300px;
+        background-color:#eeeeee;
+        padding:0.5em;
+        border:1px black solid;
+        border-radius: 0.5em;
+
+        position:absolute;
+        left:50px;
+        top:50px;
+    }
 ```
 
 ## line by line break down ##
@@ -42,15 +40,14 @@ This has three steps that needed to be accomplished with javascript.
 
 * height:200px;  - height of the box
 * width:300px;   - width of the box
-* padding:0.5em; - space between the edge of the box and the text
 * background-color:#eeeeee; - the color inside the box
-* opacity: 1; - the opposite of transparency (1 = not transparent)
+* padding:0.5em; - space between the edge of the box and the text
 * border:1px black solid; - the box border
 * border-radius: 0.5em; - the round corner and border to the box
 
 **placement**
 
-* position:absolute; - places the box relative the the view port (screen in this case)
+* position:absolute; - places the box relative to its closest positioned ancestor or to the containing block (the screen or 'view port' in this case)
 * left:50px; - 50 px from the left
 * top:50px; - 50 px from the top
 
