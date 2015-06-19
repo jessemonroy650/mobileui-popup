@@ -74,4 +74,4 @@ Working with help from: http://fvsch.com/code/transition-fade/
 
 ## iOS keyboard layout on iPodTouch ##
 
-[iOS keyboard layout](IMG_0020.png)
+![iOS keyboard layout](IMG_0020.png)
