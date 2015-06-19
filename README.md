@@ -55,8 +55,8 @@ This has three steps that needed to be accomplished with some help from Javascri
 Working with help from: http://fvsch.com/code/transition-fade/
 
 **.hidden - set the block to initial be hidden**
-* visibility:hidden; - hidden makes so the block is not seen, in this case collapse will work too.
-* display:none; - none makes it so NO space is taken in the "flow"
+* visibility:hidden; - *hidden* makes so the block is not seen, in this case collapse will work too.
+* display:none; - *none* makes it so NO space is taken in the "flow"
 
 
 **.popUp - set the block to be seen & set the initial state for animation**
