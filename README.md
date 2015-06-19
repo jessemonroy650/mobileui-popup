@@ -1,5 +1,6 @@
 # mobileui-popup
 A simple popup done with &lt;div> in landscape mode.
+Also, checks the iOS landscape vs. keyboard, to make sure the both are in landscape. This is checked with and input field - just below the buttons.
 
 This has three steps that needed to be accomplished with some help from Javascript.
 
@@ -70,3 +71,7 @@ Working with help from: http://fvsch.com/code/transition-fade/
 **.fadeOut - set the block to fadeOut (via CSS animation)**
 * opacity: 0; - make fully transparent
 * transition: opacity 1.5s ease-in-out; - animate the 'opacity' for '1.5' seconds and use the 'ease-in-out' transition formula
+
+## iOS keyboard layout on iPodTouch ##
+
+[iOS keyboard layout](IMG_0020.png)
