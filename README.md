@@ -7,6 +7,8 @@ This has three steps that needed to be accomplished with some help from Javascri
 2. add the ```fadeout``` class with a delay
 3. reset to the initial state with a slight delay
 
+**NOTE** about an hour after I published this I realized I wanted to used _fixed_ and not *absolute*.
+
 
 ## CSS code for popup ##
 ```
@@ -18,7 +20,7 @@ This has three steps that needed to be accomplished with some help from Javascri
         border:1px black solid;
         border-radius: 0.5em;
 
-        position:absolute;
+        position:fixed;
         left:50px;
         top:50px;
     }
@@ -47,7 +49,7 @@ This has three steps that needed to be accomplished with some help from Javascri
 
 **placement**
 
-* position:absolute; - places the box relative to its closest positioned ancestor or to the containing block (the screen or 'view port' in this case)
+* position:fixed; - places the box at a specified position relative to the screen's viewport and don't move it when scrolled. (See [Mozilla](https://developer.mozilla.org/en-US/docs/Web/CSS/position))
 * left:50px; - 50 px from the left
 * top:50px; - 50 px from the top
 
