@@ -67,4 +67,4 @@ Working with help from: http://fvsch.com/code/transition-fade/
 
 **.fadeOut - set the block to fadeOut (via CSS animation)**
 * opacity: 0; - make fully transparent
-* transition: opacity 1.5s ease-in-out; - animate the 'opacity' for '1.5' seconds and the 'ease-in-out' formula
+* transition: opacity 1.5s ease-in-out; - animate the 'opacity' for '1.5' seconds and use the 'ease-in-out' transition formula
