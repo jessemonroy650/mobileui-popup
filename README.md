@@ -61,7 +61,7 @@ Working with help from: http://fvsch.com/code/transition-fade/
 
 **.popUp - set the block to be seen & set the initial state for animation**
 * visibility:visible;display:block; -- toggles to make visible
-* below here NOT required, but here for completeness
+* *below here NOT required, but here for completeness*
 * opacity: 1; -- 1=fully visible, 0=hidden, anything between 0.0&lt;-&gt;1.0 is the tranparency percentage
 * transition: opacity 1.5s ease-in-out; -- 
 
