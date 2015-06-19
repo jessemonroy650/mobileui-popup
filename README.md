@@ -1,7 +1,7 @@
 # mobileui-popup
 A simple popup done with &lt;div> in landscape mode.
 
-This has three steps that needed to be accomplished with javascript.
+This has three steps that needed to be accomplished with some help from Javascript.
 
 1. add the ```popUp``` class
 2. add the ```fadeout``` class with a delay
@@ -10,16 +10,6 @@ This has three steps that needed to be accomplished with javascript.
 
 ## CSS code for popup ##
 ```
-    .hidden {visibility:collapse;display:none;}
-    .popUp {
-        visibility:visible;display:block;
-        opacity: 1;
-        transition: opacity 1.5s linear;
-    }
-    .fadeOut {
-        opacity: 0;
-        transition: opacity 1.5s linear;
-    }
     #popup {
         height:200px;
         width:300px;
@@ -31,6 +21,16 @@ This has three steps that needed to be accomplished with javascript.
         position:absolute;
         left:50px;
         top:50px;
+    }
+    .hidden {visibility:collapse;display:none;}
+    .popUp {
+        visibility:visible;display:block;
+        opacity: 1;
+        transition: opacity 1.5s linear;
+    }
+    .fadeOut {
+        opacity: 0;
+        transition: opacity 1.5s linear;
     }
 ```
 
@@ -68,5 +68,3 @@ Working with help from: http://fvsch.com/code/transition-fade/
 **.fadeOut - set the block to fadeOut (via CSS animation)**
 * opacity: 0; - make fully transparent
 * transition: opacity 1.5s ease-in-out; - animate the 'opacity' for '1.5' seconds and the 'ease-in-out' formula
-
-
