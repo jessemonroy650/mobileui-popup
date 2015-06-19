@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
     <widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:android   = "http://schemas.android.com/apk/res/android"
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "com.bsdmasterindex.mobileui-popup-test"
         version     = "1.0"
@@ -24,4 +25,8 @@
         <!-- device required so we can detect if we are using iOS -->
         <gap:plugin name="org.apache.cordova.device" />
 
+        <gap:config-file platform="android" parent="/manifest/application" >
+            <application android:debuggable="false" />
+            <activity android:screenOrientation="landscape" android:configChanges="orientation" />
+        </gap:config-file>
     </widget>
