@@ -8,7 +8,7 @@
     body {margin:0px;font-size:large;}
     #header {margin:0;padding:0;}
     #exitApp {margin:1em;float:right;}
-    .hidden {visibility:collapse;display:none;}
+    .hidden {visibility:hidden;display:none;}
     .expose {visibility:visible;display:block;} /* Here for completeness only. */
     /* This was a bit tricky, but the article - found via stackexchange, helped.
        To note, the CSS property 'display' cannot be animated, see Mozilla.
@@ -17,11 +17,11 @@
     .popUp {
         visibility:visible;display:block;
         opacity: 1;
-        transition: opacity 1.5s linear;
+        transition: opacity 1.5s ease-in-out;
     }
     .fadeOut {
         opacity: 0;
-        transition: opacity 1.5s linear;
+        transition: opacity 1.5s ease-in-out;
     }
     #popup {
         height:200px;
