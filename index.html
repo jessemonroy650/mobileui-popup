@@ -38,49 +38,49 @@
     </style>
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
     <script type="text/javascript">
-	var gWaittime    = 1000;
-	var gTimeouttime = 5000;
-	//
+    var gWaittime    = 1000;
+    var gTimeouttime = 5000;
+    //
     function onButtonClick() {
         //alert("button clicked.");
         console.log('button clicked');
-		console.log('popup');
+        console.log('popup');
         /* This could be done with callbacks, but I did it this way so it was obvious. */
         /* Set Popup message after a short delay */
-		setTimeout(function() {
-			document.getElementById('popup').classList.add("popUp");
-		}, gWaittime);
+        setTimeout(function() {
+            document.getElementById('popup').classList.add("popUp");
+        }, gWaittime);
         /* Set delay to fadeOut */
-		setTimeout(function() {
-			console.log('fadeOut');
-			document.getElementById('popup').classList.add("fadeOut");
-		}, gWaittime + gTimeouttime);
+        setTimeout(function() {
+            console.log('fadeOut');
+            document.getElementById('popup').classList.add("fadeOut");
+        }, gWaittime + gTimeouttime);
         /* Reset to Inital state. */
-		setTimeout(function() {
-			console.log('remove popUp');
-			document.getElementById('popup').classList.remove("popUp");
-			document.getElementById('popup').classList.remove("fadeOut");
-			document.getElementById('popup').classList.add("hidden");
-		}, gWaittime + gWaittime + gTimeouttime);
+        setTimeout(function() {
+            console.log('remove popUp');
+            document.getElementById('popup').classList.remove("popUp");
+            document.getElementById('popup').classList.remove("fadeOut");
+            document.getElementById('popup').classList.add("hidden");
+        }, gWaittime + gWaittime + gTimeouttime);
     }
     /* The same thing with nested callback(). For some this may be harder to grasp.
     */
     function onButtonClick2() {
-		setTimeout(function() {
-			document.getElementById('popup').classList.add("popUp");
+        setTimeout(function() {
+            document.getElementById('popup').classList.add("popUp");
             /* Set delay to fadeOut */
-    		setTimeout(function() {
-	    		console.log('fadeOut');
-		    	document.getElementById('popup').classList.add("fadeOut");
+            setTimeout(function() {
+                console.log('fadeOut');
+                document.getElementById('popup').classList.add("fadeOut");
                 /* Reset to Inital state. */
-        		setTimeout(function() {
-		        	console.log('remove popUp');
-        			document.getElementById('popup').classList.remove("popUp");
-		        	document.getElementById('popup').classList.remove("fadeOut");
-        			document.getElementById('popup').classList.add("hidden");
-		        }, gWaittime);
-    		}, gTimeouttime);
-		}, gWaittime);
+                setTimeout(function() {
+                    console.log('remove popUp');
+                    document.getElementById('popup').classList.remove("popUp");
+                    document.getElementById('popup').classList.remove("fadeOut");
+                    document.getElementById('popup').classList.add("hidden");
+                }, gWaittime);
+            }, gTimeouttime);
+        }, gWaittime);
     }
     //
     // Wait for PhoneGap to load
@@ -90,7 +90,7 @@
         alert("device ready.");
         if (device.platform === "iOS") {
             alert("got iOS.");
-	        // hide Exit button. They don't have one on iOS devices.
+            // hide Exit button. They don't have one on iOS devices.
             // http://www.mzcart.com/javascript-how-to-addremove-css-class-from-a-dom-element/
             document.getElementById('exitApp').classList.add("hidden");
             /* deals with post-iOS-7 change that covers the status bar */
