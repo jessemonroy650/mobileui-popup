@@ -1,0 +1,20 @@
+/* This was a bit tricky, but the article - found via stackexchange, helped.
+   To note, the CSS property 'display' cannot be animated, see Mozilla.
+   http://fvsch.com/code/transition-fade/
+*/
+input {margin:0 2em;}
+#popup {
+  height:200px;
+  width:300px;
+  background-color:#eeeeee;
+  padding:0.5em;
+  border:1px black solid;
+  border-radius: 0.5em;
+  position:fixed;
+  left:50px;
+  top:50px;
+}
+.fadeout {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}

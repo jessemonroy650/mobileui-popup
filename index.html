@@ -1,132 +1,34 @@
 <!DOCTYPE html>
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <title>Landscape & Popup Test</title>
+    <title>Landscape Popup & Fade Test</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="buttons.css" />
-    <style>
-    body {margin:0px;font-size:large;}
-    #header {margin:0;padding:0;}
-    #exitApp {margin:1em;float:right;}
-    .hidden {visibility:hidden;display:none;}
-    .expose {visibility:visible;display:block;} /* Here for completeness only. */
-    /* This was a bit tricky, but the article - found via stackexchange, helped.
-       To note, the CSS property 'display' cannot be animated, see Mozilla.
-       http://fvsch.com/code/transition-fade/
-    */
-    .popUp {
-        visibility:visible;display:block;
-        opacity: 1;
-        transition: opacity 1.5s ease-in-out;
-    }
-    .fadeOut {
-        opacity: 0;
-        transition: opacity 1.5s ease-in-out;
-    }
-    #popup {
-        height:200px;
-        width:300px;
-        background-color:#eeeeee;
-        padding:0.5em;
-        border:1px black solid;
-        border-radius: 0.5em;
-        position:fixed;
-        left:50px;
-        top:50px;
-    }
-    .copyright {padding:5px;align:left;font-style:italic;font-size:small;}
-    </style>
+    <link rel="stylesheet" href="popup.css" />
+    <link rel="stylesheet" href="app.css" />
     <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-    <script type="text/javascript">
-    var gWaittime    = 1000;
-    var gTimeouttime = 5000;
-    //
-    function onButtonClick() {
-        //alert("button clicked.");
-        console.log('button clicked');
-        console.log('popup');
-        /* This could be done with callbacks, but I did it this way so it was obvious. */
-        /* Set Popup message after a short delay */
-        setTimeout(function() {
-            document.getElementById('popup').classList.add("popUp");
-        }, gWaittime);
-        /* Set delay to fadeOut */
-        setTimeout(function() {
-            console.log('fadeOut');
-            document.getElementById('popup').classList.add("fadeOut");
-        }, gWaittime + gTimeouttime);
-        /* Reset to Inital state. */
-        setTimeout(function() {
-            console.log('remove popUp');
-            document.getElementById('popup').classList.remove("popUp");
-            document.getElementById('popup').classList.remove("fadeOut");
-            document.getElementById('popup').classList.add("hidden");
-        }, gWaittime + gWaittime + gTimeouttime);
-    }
-    /* The same thing with nested callback(). For some this may be harder to grasp.
-    */
-    function onButtonClick2() {
-        setTimeout(function() {
-            document.getElementById('popup').classList.add("popUp");
-            /* Set delay to fadeOut */
-            setTimeout(function() {
-                console.log('fadeOut');
-                document.getElementById('popup').classList.add("fadeOut");
-                /* Reset to Inital state. */
-                setTimeout(function() {
-                    console.log('remove popUp');
-                    document.getElementById('popup').classList.remove("popUp");
-                    document.getElementById('popup').classList.remove("fadeOut");
-                    document.getElementById('popup').classList.add("hidden");
-                }, gWaittime);
-            }, gTimeouttime);
-        }, gWaittime);
-    }
-    //
-    // Wait for PhoneGap to load
-    document.addEventListener("deviceready", onDeviceReady, false);
-    //
-    function onDeviceReady() {
-        alert("device ready.");
-        if (device.platform === "iOS") {
-            alert("got iOS.");
-            // hide Exit button. They don't have one on iOS devices.
-            // http://www.mzcart.com/javascript-how-to-addremove-css-class-from-a-dom-element/
-            document.getElementById('exitApp').classList.add("hidden");
-            /* deals with post-iOS-7 change that covers the status bar */
-            /* http://coenraets.org/blog/2013/09/phonegap-and-cordova-with-ios-7/ */
-            document.body.style.marginTop = "20px";
-        }
-
-    }
-    //
-    function onLoad() {
-        //alert("body loaded.");
-        document.getElementById('timeouttime').innerHTML = gTimeouttime/1000;
-    }
-    </script>
+    <script type="text/javascript" charset="utf-8" src="popup.js"></script>
+    <script type="text/javascript" charset="utf-8" src="app.js"></script>
 </head>
-<body onload="onLoad()">
+<body>
 <div id=header class="button button-block button-large">
     <img align=left src=favicon-48x48.png>
-    Landscape &amp; Popup Test
-    <button id=exitApp onclick='navigator.app.exitApp()' class="button button-pill button-primary button-large" style="margin:0.1em;float:right;">Exit</button>
+    Landscape, Popup &amp; Fade Test
+    <button id=exitApp class="button button-pill button-primary button-large" >Exit</button>
 </div>
 
-<div id=content style="margin:1em;">content</div>
+<div id=content>content</div>
 <div id=popup class="hidden">This is a popup message goes away after <span id=timeouttime></span> seconds.</div>
 <pre id=info>pre</pre>
-<button onclick='onButtonClick()' class="button button-pill button-action button-large">onButtonClick</button>
+<button id=button1 class="button button-pill button-action button-large">onButtonClick</button>
 <p>
-<button onclick='onButtonClick2()' class="button button-pill button-action button-large">onButtonClick2</button>
-<p >
-<input type=text style="margin:0 2em;" />
+<button id=button2 class="button button-pill button-action button-large">onButtonClick2</button>
+<p>
+<input type=text />
 
 <div id="loremipsum" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
-<p>
-<div id="loremipsum" >Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
 
-<div class="copyright" style="padding:5px;align:left;font-style:italic;font-size:small;">
+<div class="copyright">
     <span id=copyright>Created by Jesus Monroy, Jr. &copy; 2015</span>
 </div>
 </body>
